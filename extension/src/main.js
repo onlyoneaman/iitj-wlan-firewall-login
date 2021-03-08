@@ -1,4 +1,6 @@
 import {MY_USERNAME, MY_PASSWORD} from './Enums/StorageEnums'
+import RunServer from './Common/ApiCalls/Apis'
+import Sleep from './Common/helpers/Sleep'
 
 /*global chrome*/
 
@@ -11,13 +13,23 @@ export async function saveCreds(username, password) {
 
 export async function getCredsFromChrome() {
   let u, p;
-  chrome.storage.sync.get([
-    MY_USERNAME, MY_PASSWORD 
-  ], (val)=>{
-    u = val.MY_USERNAME;
-    p = val.MY_PASSWORD;
-  })
-  return [u, p];
+  if( RunServer || process.env.NODE_ENV !== 'development') {
+    chrome.storage.sync.get([
+      MY_USERNAME, MY_PASSWORD 
+    ], (val)=>{
+      u = val.MY_USERNAME;
+      p = val.MY_PASSWORD;
+    })
+    return [u, p];
+  } else {
+    Sleep(3000)
+      .then(r => {
+        console.log('finish');
+        [u,p] = dummyCreds()
+      })
+    console.log('next')
+    return [u, p]
+  }
 }
 
 export async function changeColor() {
@@ -34,4 +46,8 @@ export async function changeColor() {
     }
   ));
   
+}
+
+function dummyCreds() {
+  return ['kumar', 'password']
 }

@@ -1,18 +1,19 @@
-import React, {useState} from 'react'
-import {Form, Typography} from 'antd';
+import React, {useState, useEffect} from 'react'
+import {Form, Spin, Input} from 'antd';
 import { getCredsFromChrome } from '../main';
+import Heading from '../Components/Heading'
 
-const {Title} = Typography
-
-const Creds = ({}) => {
-  const [load, setLoad] = useState(false)
+const Creds = () => {
+  const [load, setLoad] = useState(true)
   const [u, setU] = useState('')
   const [p, setP] = useState('')
 
-  function getCreds() {
+  async function getCreds() {
     setLoad(true)
     getCredsFromChrome()
       .then(r => {
+        console.log(r)
+        setLoad(false)
         setU(r[0]);
         setP(r[1]);
       })
@@ -24,11 +25,16 @@ const Creds = ({}) => {
 
   return(
     <div>
-      <Title level={4}>
-          LDAP Credentials
-        </Title>
+        <Heading 
+          title="LDAP Credentials"
+        />
         {load ? <Spin /> : (
-        <Form>
+        <Form
+          initialValues={{
+            username: u,
+            password: p
+          }}
+        >
           <Form.Item
             label="Username"
           >
