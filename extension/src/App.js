@@ -1,13 +1,13 @@
 import './App.css';
-import { changeColor } from './main';
+import './Components/all.sass'
+import Creds from './Components/Creds'
 
-function App() {
+const App = () => {
+
   return (
     <div className="App">
       <header className="App-header">
-        <button onClick={changeColor}>
-          Change color
-        </button>
+        <Creds />
       </header>
     </div>
   );
