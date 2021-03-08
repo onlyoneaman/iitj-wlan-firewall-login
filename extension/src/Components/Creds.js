@@ -30,21 +30,25 @@ const Creds = () => {
         />
         {load ? <Spin /> : (
         <Form
+          hideRequiredMark
           initialValues={{
             username: u,
             password: p
           }}
         >
           <Form.Item
+            required
             label="Username"
           >
             <Input />
           </Form.Item>
           <Form.Item
+            required
             label="Password"
           >
             <Input.Password />
           </Form.Item>
+          
         </Form>
         )}
     </div>
