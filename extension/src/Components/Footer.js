@@ -6,9 +6,9 @@ import SendEvent from '../Common/Events/SendEvent'
 const Footer = () => {
   return(
     <div className="has-text-centered">
-      Made with ❤️ by Aman
+      Made with ❤️ by <a title="_a_gryffindor" target="_blank" rel="noreferrer noopener" onClick={()=>{SendEvent('Click Aman', 'Instagram Link CLick', 'Click')}} href="https://instagram.com/_a_gryffindor">Aman</a>
       <div>
-        <Button type="link" target="_blank" title="Twitter" rel="noreferrer noopener" onClick={()=>{SendEvent('Click Aman', 'Twitter Link CLick', 'Click')}} href="https://twitter.com/onlyoneaman">
+{/*         <Button type="link" target="_blank" title="Twitter" rel="noreferrer noopener" onClick={()=>{SendEvent('Click Aman', 'Twitter Link CLick', 'Click')}} href="https://twitter.com/onlyoneaman">
           <TwitterOutlined />
         </Button>
         <Button title="Medium" type="link" target="_blank" rel="noreferrer noopener" onClick={()=>{SendEvent('Click Aman', 'Medium Link CLick', 'Click')}} href="https://onlyoneaman.medium.com">
@@ -16,7 +16,7 @@ const Footer = () => {
         </Button>
         <Button type="link" title="Instagram" target="_blank" rel="noreferrer noopener" onClick={()=>{SendEvent('Click Aman', 'Instagram Link CLick', 'Click')}} href="https://instagram.com/_a_gryffindor">
           <InstagramOutlined />
-        </Button>
+        </Button> */}
       </div>
       <Space>
         <Button type="link" href="https://forms.gle/WztdHSSMpT4DMHbU6" target="_blank" rel="noreferrer noopener" className="pr-0" onClick={()=>SendEvent('Click Report Bug', 'Report A Bug', 'Click')}>
@@ -28,7 +28,7 @@ const Footer = () => {
         </Button>
         |
         <Button type="link" target="_blank" rel="noreferrer noopener" href="https://onlyoneaman.medium.com/wlan-cred-6f77ed2fce5c" className="pl-0" onClick={()=>SendEvent('Click Github', 'Visit Source Code', 'Click')}>
-          More Info
+          More on Blog
         </Button>
       </Space>
     </div>
