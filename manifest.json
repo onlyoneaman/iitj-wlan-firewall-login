@@ -2,7 +2,7 @@
   "short_name": "Wlan Cred",
   "name": "WLAN CRED",
   "description": "Auto Logins into IITJ WLAN Firewall",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "manifest_version": 2,
   "permissions": [
     "storage",
