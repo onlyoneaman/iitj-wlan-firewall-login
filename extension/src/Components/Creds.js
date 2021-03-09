@@ -37,7 +37,7 @@ const Creds = () => {
     if(process.env.NODE_ENV !== "development") {
       chrome.storage.sync.set({
         wlan_us: username, 
-        wlan_pd: password
+        wlan_pd: btoa(password)
       }, ()=>{
         console.log('Saved User Credentials username: ' + username);
         SendEvent('Save Credentials Successful', 'Saving Credentials Success '+ username, 'Save Credentials')
@@ -81,10 +81,11 @@ const Creds = () => {
       ], (val)=>{
         u = val.wlan_us || '';
         p = val.wlan_pd || '';
+        if(p) {p = atob(p)}
         console.group("Get Creds")
         console.log('val: ', val);
         console.log('u: ', u)
-        console.log('p: ', p)
+        // console.log('p: ', p)
         console.groupEnd()
         setCreds(u, p, show)
       })

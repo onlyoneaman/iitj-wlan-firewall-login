@@ -5,6 +5,7 @@ chrome.storage.sync.get([
   u = val['wlan_us'];
   p = val['wlan_pd'];
   if(u && p) {
+    p = atob(p)
     document.getElementById("ft_un").value = u
     document.getElementById("ft_pd").value = p
     console.log('Set values in Form')
