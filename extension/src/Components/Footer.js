@@ -19,7 +19,7 @@ const Footer = () => {
         </Button>
       </div>
       <Space>
-        <Button type="link" className="pr-0" onClick={()=>SendEvent('Click Report Bug', 'Report A Bug', 'Click')}>
+        <Button type="link" href="https://forms.gle/WztdHSSMpT4DMHbU6" target="_blank" rel="noreferrer noopener" className="pr-0" onClick={()=>SendEvent('Click Report Bug', 'Report A Bug', 'Click')}>
           Report A Bug
         </Button>
         |
@@ -27,7 +27,7 @@ const Footer = () => {
           <GithubOutlined />
         </Button>
         |
-        <Button type="link" target="_blank" rel="noreferrer noopener" href="https://github.com/onlyoneaman/iitj-wlan-firewall-login" className="pl-0" onClick={()=>SendEvent('Click Github', 'Visit Source Code', 'Click')}>
+        <Button type="link" target="_blank" rel="noreferrer noopener" href="https://onlyoneaman.medium.com/wlan-cred-6f77ed2fce5c" className="pl-0" onClick={()=>SendEvent('Click Github', 'Visit Source Code', 'Click')}>
           More Info
         </Button>
       </Space>
