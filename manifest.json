@@ -42,5 +42,5 @@
       "run_at": "document_end"
     }
   ],
-  "content_security_policy": "script-src 'self' https://www.google-analytics.com 'sha256-fdAfMKZtCTRPKMRznGwonJHC++vCCrQS7XFnVrzSXAE=' 'sha256-YD8w9VLrdvqI5/tFVmpT+1337ly+e/JvPrkRxYZo/w4=' 'sha256-xvDP1jsKqlCFyWpplHqwBXEq8jkfyuOiAXTErLeOGgc=' 'sha256-cR3RchLzSuKW2Qgd71PZRb5Fx83PbjHFz1NcQOs+Bqg='; object-src 'self';"
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com 'sha256-fdAfMKZtCTRPKMRznGwonJHC++vCCrQS7XFnVrzSXAE=' 'sha256-YD8w9VLrdvqI5/tFVmpT+1337ly+e/JvPrkRxYZo/w4=' 'sha256-xvDP1jsKqlCFyWpplHqwBXEq8jkfyuOiAXTErLeOGgc=' 'sha256-cR3RchLzSuKW2Qgd71PZRb5Fx83PbjHFz1NcQOs+Bqg=' 'sha256-5W9nDJUfvF0b+G1GuzuiS3LmtiHrI/4H62uXg5QslQI='; object-src 'self';"
 }
