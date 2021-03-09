@@ -97,7 +97,7 @@ const Creds = () => {
   function setCreds(u, p, show) {
     console.log('finish');
     if(!u || !p ) {
-      showMessage('Enter Your LDAP Credntials.')
+      showMessage('Enter Your LDAP Credentials.')
     } else {      
       !show && setEmpty(false);
       console.log('finish');
