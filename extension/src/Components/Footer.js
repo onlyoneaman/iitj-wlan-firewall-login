@@ -8,6 +8,7 @@ const Footer = () => {
     <div className="has-text-centered">
       Made with ❤️ by <a title="_a_gryffindor" target="_blank" rel="noreferrer noopener" onClick={()=>{SendEvent('Click Aman', 'Instagram Link CLick', 'Click')}} href="https://instagram.com/_a_gryffindor">Aman</a>
       <div>
+        v1.0.0
 {/*         <Button type="link" target="_blank" title="Twitter" rel="noreferrer noopener" onClick={()=>{SendEvent('Click Aman', 'Twitter Link CLick', 'Click')}} href="https://twitter.com/onlyoneaman">
           <TwitterOutlined />
         </Button>
