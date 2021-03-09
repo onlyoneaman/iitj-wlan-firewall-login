@@ -10,7 +10,7 @@ const Info = ({show}) => {
 
   return(
     <Tooltip
-      title="Info Text"
+      title="WLAN Cred stores your login info in your browser only and never shares it."
     >
       <InfoCircleOutlined />
     </Tooltip>

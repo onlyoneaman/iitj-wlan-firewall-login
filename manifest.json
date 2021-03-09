@@ -1,13 +1,14 @@
 {
-  "short_name": "Wlan Login",
-  "name": "Logins into Wlan",
+  "short_name": "Wlan Cred",
+  "name": "WLAN CRED",
+  "description": "Auto Logins into IITJ WLAN Firewall",
   "version": "1.0.0",
   "manifest_version": 2,
   "permissions": [
     "storage",
     "activeTab",
     "http://*/*", 
-    "https://gateway.iitj.ac.in:*/*"
+    "https://*/*"
   ],
   "browser_action": {
     "default_popup": "extension/build/index.html",

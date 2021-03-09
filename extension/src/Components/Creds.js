@@ -41,14 +41,16 @@ const Creds = () => {
       }, ()=>{
         console.log('Saved User Credentials username: ' + username);
         SendEvent('Save Credentials Successful', 'Saving Credentials Success '+ username, 'Save Credentials')
-        getCredsFromChrome()
+        getCredsFromChrome(true)
+        showMessage('Credentials Saved 👍')
         stopLoading()
       }) 
     } else {
       console.log('Saved User Credentials');
       SendEvent('Save Credentials Successful', 'Saving Credentials Success '+ username, 'Save Credentials')
       stopLoading()
-      getCredsFromChrome()
+      showMessage('Credentials Saved 👍')
+      getCredsFromChrome(true)
     }
   }
 
@@ -66,7 +68,7 @@ const Creds = () => {
     })
   }
 
-  function getCredsFromChrome() {
+  function getCredsFromChrome(show = false) {
     SendEvent(
       'Get Credentials',
       'Getting Credentials Popup',
@@ -84,7 +86,7 @@ const Creds = () => {
         console.log('u: ', u)
         console.log('p: ', p)
         console.groupEnd()
-        setCreds(u, p)
+        setCreds(u, p, show)
       })
     } else {
       [u,p] = dummyCreds()
@@ -92,33 +94,38 @@ const Creds = () => {
     }
   }
 
-  function setCreds(u, p) {
+  function setCreds(u, p, show) {
     console.log('finish');
     if(!u || !p ) {
-      setEmpty(true)
-      setTitle('Enter Your LDAP Credntials.')
+      showMessage('Enter Your LDAP Credntials.')
     } else {      
+      !show && setEmpty(false);
       console.log('finish');
-      setEmpty(false)
     }
     SendEvent('Get Credentials Successful', 'Successfully Retrieved Credentials ' + u, 'Get Credentials')
     setFormValues(u, p);
     stopLoading()
   }
 
+  function showMessage(message) {
+    setTitle(message)
+    setEmpty(true)
+  }
+
   function dummyCreds() {
-    return ['kumar', '']
+    return ['', '']
   }
 
   useEffect(()=> {
     initializeGA()
     getCreds()
+    console.log('Console logs are meant for debugging purposes only.')
   }, [])
 
   return(
     <div>
         <Heading 
-          title="LDAP Credentials"
+          title="WLAN CRED"
         />
         {empty && (
           <div className="notification pt-1 pb-1 pr-1 pl-1 mb-2">
